@@ -1,3 +1,4 @@
+// Purpose: Model class for Photo object.
 package com.example.tapassessment.model;
 
 public class Photo {

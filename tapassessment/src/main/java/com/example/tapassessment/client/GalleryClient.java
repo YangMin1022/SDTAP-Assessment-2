@@ -1,3 +1,5 @@
+// This is a simple Swing client that fetches photos from the server based on the artist name.
+// The client sends a GET request to the server and displays the JSON response in a text area.
 package com.example.tapassessment.client;
 
 import java.awt.BorderLayout;

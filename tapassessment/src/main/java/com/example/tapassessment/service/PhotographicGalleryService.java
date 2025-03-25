@@ -23,8 +23,19 @@ public class PhotographicGalleryService {
     private static final String PHOTO_URL = "https://web.socem.plymouth.ac.uk/COMP2005/photographic-gallery-webservice/Photo";
     private static final String RATING_URL = "https://web.socem.plymouth.ac.uk/COMP2005/photographic-gallery-webservice/Rating";
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    // private final RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate;
     private final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+
+    // Default constructor creates a new RestTemplate
+    public PhotographicGalleryService() {
+        this.restTemplate = new RestTemplate();
+    }
+    
+    // Setter to allow injecting a mock RestTemplate for testing
+    public void setRestTemplate(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     // Fetch all members
     public Member[] fetchMembers() {

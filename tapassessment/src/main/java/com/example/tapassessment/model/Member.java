@@ -1,3 +1,4 @@
+// Purpose: Model class for Member object.
 package com.example.tapassessment.model;
 
 public class Member {
@@ -5,10 +6,6 @@ public class Member {
     private String surname;
     private String forenames;
     private String email;
-    
-    // Getters and setters
-    // Optionally, add a toString() method
-    // ...
 
     public int getId() {
         return id;

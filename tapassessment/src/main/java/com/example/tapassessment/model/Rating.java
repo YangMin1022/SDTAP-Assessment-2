@@ -1,3 +1,4 @@
+// Purpose: Model class for Rating object.
 package com.example.tapassessment.model;
 
 public class Rating {
