@@ -13,8 +13,8 @@ This README provides instructions to set up, build, run, and test the project fr
 - [Project Setup](#project-setup)
 
 - [Running the Application](#running-the-application)
-  - Part A – Web-Service API
-  - Part B – Swing Client
+  - [Part A – Web-Service API](#part-a---web-service-api)
+  - [Part B – Swing Client](#part-b---swing-client)
 
 - [Running Tests](#running-tests)
 
@@ -27,13 +27,13 @@ Before setting up the project, ensure you have the following installed:
 
 - **Java Development Kit (JDK):** Version 19 (or as specified in your project).
 
-- **Gradle:" The project uses Gradle as the build tool. You can use the Gradle wrapper provided (`gradlew`/`gradlew.bat`).
+- **Gradle:** The project uses Gradle as the build tool. You can use the Gradle wrapper provided (`gradlew`/`gradlew.bat`).
 
-- **Git:" For cloning the repository.
+- **Git:** For cloning the repository.
 
-- **An IDE:" VS Code, IntelliJ IDEA, or Eclipse are recommended for Java development.
+- **An IDE:** VS Code, IntelliJ IDEA, or Eclipse are recommended for Java development.
 
-- **Internet Connection:" For Gradle to download dependencies.
+- **Internet Connection:** For Gradle to download dependencies.
 
 ## Project Setup
 1. **Clone the Repository:**
@@ -43,12 +43,10 @@ Before setting up the project, ensure you have the following installed:
    cd [PROJECT_DIRECTORY]
 
 2. **Open the Project:**
-
-- **VS Code:**
-  Open VS Code, choose File > Open Folder..., and select the cloned project folder.
-
-- **IntelliJ IDEA/Eclipse:**
-  Import the project as a Gradle project.
+   - **VS Code:**
+     Open VS Code, choose File > Open Folder..., and select the cloned project folder.
+   - **IntelliJ IDEA/Eclipse:**
+     Import the project as a Gradle project.
 
 3. **Resolve Dependencies:**
    Gradle will automatically download all required dependencies. You can trigger this by running:
