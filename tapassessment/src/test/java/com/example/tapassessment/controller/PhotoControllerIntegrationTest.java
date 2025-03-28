@@ -36,6 +36,23 @@ public class PhotoControllerIntegrationTest {
                 // Check a property on one of the returned Photo objects
                 .andExpect(jsonPath("$[0].title", notNullValue()));
     }
+
+    @Test
+    public void testGetPhotosByArtistMissingParameter() throws Exception {
+        // Test behavior when the 'name' parameter is missing.
+        mockMvc.perform(get("/api/photos/artist"))
+               .andExpect(status().isBadRequest());
+    }
+    
+    @Test
+    public void testGetPhotosByArtistNoMatch() throws Exception {
+        // Test when no photos match the artist name.
+        // Expect an empty JSON array.
+        mockMvc.perform(get("/api/photos/artist").param("name", "NonExistingName"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$", empty()));
+    }
     
     @Test
     public void testGetTopRatedPhotosEndpoint() throws Exception {
@@ -47,6 +64,16 @@ public class PhotoControllerIntegrationTest {
                 .andExpect(jsonPath("$", not(empty())));
     }
     
+    @Test
+    public void testGetTopRatedPhotosEmptyResult() throws Exception {
+        // This test assumes that the system may return an empty list
+        // if no photos meet the top-rated criteria.
+        mockMvc.perform(get("/api/photos/top-rated"))
+               .andExpect(status().isOk())
+               .andExpect(content().contentType("application/json"))
+               .andExpect(jsonPath("$", empty()));
+    }
+
     @Test
     public void testGetAverageRatingEndpoint() throws Exception {
         // Test average rating for a specific artist
