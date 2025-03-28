@@ -13,8 +13,8 @@ This README provides instructions to set up, build, run, and test the project fr
 - [Project Setup](#project-setup)
 
 - [Running the Application](#running-the-application)
-  - [Part A – Web-Service API](#part-a---web-service-api)
-  - [Part B – Swing Client](#part-b---swing-client)
+  - [Part A – Web-Service API](#part-a-web-service-api)
+  - [Part B – Swing Client](#part-b-swing-client)
 
 - [Running Tests](#running-tests)
 
@@ -75,71 +75,58 @@ Before setting up the project, ensure you have the following installed:
      http://localhost:8080/api/photos/average-rating?artist=Smith
 
 ### Part B – Swing Client
-Run the Swing Client:
+1. **Run the Swing Client:**
+   Open the main class for the Swing client (e.g., `GalleryClient.java`) in your IDE and run the `main()` method.
+   Alternatively, you can package it into a JAR and run:
+   ```bash
+   java -jar [PATH_TO_YOUR_JAR]
 
-Open the main class for the Swing client (e.g., GalleryClient.java) in your IDE and run the main() method.
-Alternatively, you can package it into a JAR and run:
-
-bash
-
-java -jar [PATH_TO_YOUR_JAR]
-
-Using the Client:
-
-The Swing client GUI will appear. You can enter an artist's name (e.g., "Mike") and click the "Fetch Photos" button to retrieve data from the API.
+2. **Using the Client:**
+   The Swing client GUI will appear. You can enter an artist's name (e.g., "Mike") and click the "Fetch Photos" button to retrieve data from the API.
 
 ## Running Tests
 To run both unit and integration tests:
+1. Open a terminal in the project directory.
+2. Execute the following command:
+   ```bash
+   ./gradlew test
 
-Open a terminal in the project directory.
-
-Execute the following command:
-
-bash
-
-./gradlew test
-
-This command runs all tests in the src/test/java directory.
+  This command runs all tests in the src/test/java directory.
 
 ## Generating Code Coverage Report
 The project is set up with JaCoCo to generate code coverage reports.
 
-Run the tests along with the coverage report generation:
+1. Run the tests along with the coverage report generation:
+   ```bash
+   ./gradlew test jacocoTestReport
 
-bash
+2. Open the HTML report by navigating to:
+   ```bash
+   build/reports/jacoco/test/html/index.html
+  
+  in your browser.
 
-./gradlew test jacocoTestReport
-
-Open the HTML report by navigating to:
-
-build/reports/jacoco/test/html/index.html
-
-in your browser.
-
-## Project Structure
-
-bash
-
-.
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com/example/tapassessment
-│   │   │       ├── controller
-│   │   │       │   └── PhotoController.java
-│   │   │       ├── model
-│   │   │       │   ├── Member.java
-│   │   │       │   ├── Photo.java
-│   │   │       │   └── Rating.java
-│   │   │       └── service
-│   │   │           └── PhotographicGalleryService.java
-│   │   └── resources
-│   └── test
-│       └── java
-│           └── com/example/tapassessment
-│               ├── controller
-│               │   └── PhotoControllerIntegrationTest.java
-│               └── service
-│                   └── PhotographicGalleryServiceTest.java
-├── build.gradle
-└── README.md
+## Project Structure 
+    .
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   │   └── com/example/tapassessment
+    │   │   │       ├── controller
+    │   │   │       │   └── PhotoController.java
+    │   │   │       ├── model
+    │   │   │       │   ├── Member.java
+    │   │   │       │   ├── Photo.java
+    │   │   │       │   └── Rating.java
+    │   │   │       └── service
+    │   │   │           └── PhotographicGalleryService.java
+    │   │   └── resources
+    │   └── test
+    │       └── java
+    │           └── com/example/tapassessment
+    │               ├── controller
+    │               │   └── PhotoControllerIntegrationTest.java
+    │               └── service
+    │                   └── PhotographicGalleryServiceTest.java
+    ├── build.gradle
+    └── README.md
