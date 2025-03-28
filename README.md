@@ -112,6 +112,8 @@ The project is set up with JaCoCo to generate code coverage reports.
     │   ├── main
     │   │   ├── java
     │   │   │   └── com/example/tapassessment
+    │   │   │       ├── client
+    │   │   │       │   └── GalleryClient.java
     │   │   │       ├── controller
     │   │   │       │   └── PhotoController.java
     │   │   │       ├── model
